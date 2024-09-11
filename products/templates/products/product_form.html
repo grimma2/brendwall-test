@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'products/css/style.css' %}">
+
+    <title>Проукты и форма</title>
+</head>
+<body>
+    <h1>Форма создания продукта</h1>
+
+    <form id="product-form">
+        <label for="name">Название:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="description">Описание:</label>
+        <input type="text" id="description" name="description" required><br><br>
+
+        <label for="price">Цена:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br><br>
+
+        <button type="submit">Добавить</button>
+    </form>
+
+    <div id="error-block" class="error"></div>
+
+    <h2>Список продуктов</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Описание</th>
+                <th>Цена</th>
+            </tr>
+        </thead>
+        <tbody id="product-table-body"></tbody>
+    </table>
+</body>
+
+<script src="{% static 'products/js/productsForm.js' %}"></script>
+
+</html>
