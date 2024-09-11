@@ -22,4 +22,4 @@ adduser -S --shell /bin/bash --ingroup docker vscode
 EOF
 # install Docker tools (cli, buildx, compose)
 COPY --from=gloursdocker/docker / /
-CMD ["sh", "-c", "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "python3 manage.py migrate && python3 manage.py initadmin && python3 manage.py runserver 0.0.0.0:8000"]
